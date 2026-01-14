@@ -25,10 +25,7 @@
 
 \begin{frame}
     Rust was created as a replacement of CPP.
-\end{frame}
-
-\begin{frame}
-    OOP is "Compile-time hiearchy of encapsulation that matches the domain model" - Casey Muratori
+    "Compile-time hiearchy of encapsulation that matches the domain model" - Casey Muratori
     % This dicates the boundaries of code.
     % Some type of encapsulation makes one type fo code easy to write and one type of code
     % harder to write.
@@ -48,11 +45,11 @@
 
 
 \begin{frame}
- a smallest \& wrong diagram of our code structure looks like this,
- remind you this is of only one pipeline, each pipeline has a seperate
- structure like this, this causes massive code duplication.
+    a smallest \& wrong diagram of our code structure looks like this,
+    remind you this is of only one pipeline, each pipeline has a seperate
+    structure like this, this causes massive code duplication.
     \begin{center}
-    \includegraphics[width = 10cm]{structure.png}
+        \includegraphics[width = 10cm]{structure.jpg}
     \end{center}
 \end{frame}
 
@@ -93,7 +90,29 @@
 \end{frame}
 
 \begin{frame}
-    We can flip the encapsulation boundary
+    We can flip the encapsulation boundary around the feature(s) and not the domain model itself.
 \end{frame}
+
+\begin{frame}
+    instead of having traits that define methods and GATs, we directly do the thing that we want to do.
+\end{frame}
+
+\begin{frame}
+    \includegraphics[width = 10cm]{new_structure_example.jpg}
+\end{frame}
+
+\begin{frame}
+    this kind of similar to how a ECS would work, this makes the code easy to reason about, and no 
+    encapsulation would never bottleneck the application development.
+\end{frame}
+
+\begin{frame}
+    So where does borrow checker fit in all of this?
+\end{frame}
+
+\begin{frame}
+    Well, we tend to think of memory being two kind of memory, stack vs heap
+\end{frame}
+
 
 \end{document}
