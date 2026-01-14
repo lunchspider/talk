@@ -24,28 +24,20 @@
 \section{Introduction}
 
 \begin{frame}
-    Rust was created as a replacement of CPP.
-    "Compile-time hiearchy of encapsulation that matches the domain model" - Casey Muratori
-    % This dicates the boundaries of code.
-    % Some type of encapsulation makes one type fo code easy to write and one type of code
-    % harder to write.
-\end{frame}
-
-\begin{frame}
     Now I was trying to create an encapsulation of domain model into traits.
     %That caused too much issue.
 \end{frame}
 
 \begin{frame}
     Culling is selecting of ?good? images.
-    The definition of good/bad is judged by multiple factor, but for the sake of this 
+    The definition of good/bad is judged by multiple factors, but for the sake of this 
     presentation we take every image, then run ML models on them get scores, and run 
     algorithm on them to get selection/rejections.
 \end{frame}
 
 
 \begin{frame}
-    a smallest \& wrong diagram of our code structure looks like this,
+    a small \& wrong diagram of our code structure looks like this,
     remind you this is of only one pipeline, each pipeline has a seperate
     structure like this, this causes massive code duplication.
     \begin{center}
@@ -67,8 +59,9 @@
 
 \begin{frame}
     Even with the macros, composing features was difficult
-    % it is *also* because of the changes in the pipeline, with basically
-    % the issue being of data drilling, also testing was also impossible.
+     it is *also* because of the how quickly changes were made in the pipeline, and also basically
+     the issue being of data drilling, as in data that is created on end of a program is required on 
+     the other end of program, also testing was also impossible.
 \end{frame}
 
 \begin{frame}
@@ -79,9 +72,11 @@
 \begin{frame}
     But they force you to think in term of little small pieces of data/methods, that can be accessed
     from within the traits
-    % this severly restricts with what a computer can do, it primarily restricts things that look
-    % at two ?random? pieces of data, that might not have any explicit relationship in the domain model
-    % but an implicit relationship at runtime, this puts a bizzare restrictioin on a given software.
+     this severly restricts with what a computer can do, it primarily restricts things that look
+     at two ?random? pieces of data, that might not have any explicit relationship in the domain model
+     but an implicit relationship at runtime, this puts a bizzare restrictioin on a given software.
+     that is how if you want to do things within an pipeline, everything works fine-ish, but accross
+     even the same logic need to respresented again and again.
 \end{frame}
 
 \begin{frame}
@@ -113,6 +108,15 @@
 \begin{frame}
     Well, we tend to think of memory being two kind of memory, stack vs heap
 \end{frame}
+
+\begin{frame}
+    Rust was created as a replacement of CPP.
+    "Compile-time hiearchy of encapsulation that matches the domain model" - Casey Muratori
+    % This dicates the boundaries of code.
+    % Some type of encapsulation makes one type fo code easy to write and one type of code
+    % harder to write.
+\end{frame}
+
 
 
 \end{document}
