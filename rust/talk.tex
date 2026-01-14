@@ -35,8 +35,8 @@
 \end{frame}
 
 \begin{frame}
-    Now I was trying to create of encapsulation of domain model into traits.
-    That caused too much issue.
+    Now I was trying to create a encapsulation of domain model into traits.
+    %That caused too much issue.
 \end{frame}
 
 \begin{frame}
@@ -70,7 +70,27 @@
 \end{frame}
 
 \begin{frame}
-    Even with the macros,composing features was difficult
+    Even with the macros, composing features was difficult
+    % it is *also* because of the changes in the pipeline, with basically
+    % the issue being of data drilling, also testing was also impossible.
 \end{frame}
+
+\begin{frame}
+    The core reason of creating any time of encapsulation is to have less code duplication,
+    traits are good for code generation.
+\end{frame}
+
+\begin{frame}
+    But they force you to think in term of little small pieces of data/methods, that can be accessed
+    from within the traits
+    % this severly restricts with what a computer can do, it primarily restricts things that look
+    % at two ?random? pieces of data, that might not have any explicit relationship in the domain model
+    % but an implicit relationship at runtime, this puts a bizzare restrictioin on a given software.
+\end{frame}
+
+\begin{frame}
+\end{frame}
+
+
 
 \end{document}
