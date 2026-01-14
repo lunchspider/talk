@@ -1,0 +1,76 @@
+\documentclass{beamer}
+
+% Theme selection
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+% Presentation metadata
+\title{The fault in our traits}
+\subtitle{\& the borrow checker}
+\author{Aman Sharma}
+\institute{Aftershoot Inc.}
+\date{\today}
+
+
+\begin{document}
+
+% Title slide
+\frame{\titlepage}
+
+\section{Introduction}
+
+\begin{frame}
+    Rust was created as a replacement of CPP.
+\end{frame}
+
+\begin{frame}
+    OOP is "Compile-time hiearchy of encapsulation that matches the domain model" - Casey Muratori
+    % This dicates the boundaries of code.
+    % Some type of encapsulation makes one type fo code easy to write and one type of code
+    % harder to write.
+\end{frame}
+
+\begin{frame}
+    Now I was trying to create of encapsulation of domain model into traits.
+    That caused too much issue.
+\end{frame}
+
+\begin{frame}
+    Culling is selecting of ?good? images.
+    The definition of good/bad is judged by multiple factor, but for the sake of this 
+    presentation we take every image, then run ML models on them get scores, and run 
+    algorithm on them to get selection/rejections.
+
+\end{frame}
+
+
+\begin{frame}
+ a smallest \& wrong diagram of our code structure looks like this,
+ remind you this is of only one pipeline, each pipeline has a seperate
+ structure like this, this causes massive code duplication.
+    \begin{center}
+    \includegraphics[width = 10cm]{structure.png}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    This in term made very brittle and hard to reason about, any change and addition
+    to the feature or code required writing something horrendeous like this, or simply 
+    use a dozen of macros and work in together.
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \includegraphics[width = 10cm]{traits_maximus.jpg}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    Even with the macros,composing features was difficult
+\end{frame}
+
+\end{document}
