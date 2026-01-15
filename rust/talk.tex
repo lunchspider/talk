@@ -113,12 +113,11 @@
 
 \begin{frame}
     But they force you to think in term of little small pieces of data/methods, that can be accessed
-    from within the traits
-     this severly restricts with what a computer can do, it primarily restricts things that look
-     at two ?random? pieces of data, that might not have any explicit relationship in the domain model
-     but an implicit relationship at runtime, this puts a bizzare restrictioin on a given software.
-     that is how if you want to do things within an pipeline, everything works fine-ish, but accross
-     even the same logic need to respresented again and again.
+    from within the traits. this severly restricts with what a computer can do, it primarily restricts things that look
+    at two ?random? pieces of data, that might not have any explicit relationship in the domain model
+    but an implicit relationship at runtime, this puts a bizzare restrictioin on a given software.
+    that is how if you want to do things within an pipeline, everything works fine-ish, but accross
+    even the same logic need to respresented again and again.
 \end{frame}
 
 \begin{frame}
@@ -139,16 +138,8 @@
 \end{frame}
 
 \begin{frame}
-    this kind of similar to how a ECS would work, this makes the code easy to reason about, and no 
-    encapsulation would never bottleneck the application development.
-\end{frame}
-
-\begin{frame}
-    So where does borrow checker fit in all of this?
-\end{frame}
-
-\begin{frame}
-    Well, we tend to think of memory being two kind of memory, stack vs heap
+    this kind of similar to how a ECS would work, this makes the code easy to reason about, and this kind of
+    encapsulation should not bottleneck the application development.
 \end{frame}
 
 \begin{frame}
@@ -158,7 +149,5 @@
     % Some type of encapsulation makes one type fo code easy to write and one type of code
     % harder to write.
 \end{frame}
-
-
 
 \end{document}
