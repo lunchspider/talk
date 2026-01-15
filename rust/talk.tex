@@ -24,11 +24,6 @@
 \section{Introduction}
 
 \begin{frame}
-    Now I was trying to create an encapsulation of domain model into traits.
-    %That caused too much issue.
-\end{frame}
-
-\begin{frame}
     Culling is selecting of ?good? images.
     The definition of good/bad is judged by multiple factors, but for the sake of this 
     presentation we take every image, then run ML models on them get scores, and run 
@@ -37,13 +32,60 @@
 
 
 \begin{frame}
-    a small \& wrong diagram of our code structure looks like this,
-    remind you this is of only one pipeline, each pipeline has a seperate
-    structure like this, this causes massive code duplication.
+    A general overview of culling pipeline would look something this, different pipeline have 
+    difference in the steps in between, but the overall overview will look like this
     \begin{center}
-        \includegraphics[width = 10cm]{structure.jpg}
+    \includegraphics[width = 4cm]{culling_pipeline.jpg}
     \end{center}
 \end{frame}
+
+\begin{frame}
+    Now how would you encode this into a trait based system?
+    Let's start with an image:
+    \begin{center}
+    \includegraphics[width = 10cm]{partial_image.jpg}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    Now how would you share this structure across pipeline
+    \begin{center}
+    \includegraphics[width = 10cm]{partial_image_cnstr.jpg}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    Now you must do it again with the faces
+    \begin{center}
+    \includegraphics[width = 10cm]{partial_face.jpg}
+    \end{center}
+\end{frame}
+
+
+\begin{frame}
+    Faces need to be shared among pipeline right?
+    \begin{center}
+    \includegraphics[width = 10cm]{partial_face_cnstr.jpg}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    now can we write any code about the real logic?
+\end{frame}
+
+\begin{frame}
+    There are some scores that are dependent on duplicate detection, after which selection runs,
+    to encode this into the type system, we must create another type for image.
+    \includegraphics[width = 10cm]{complete_image.jpg}
+\end{frame}
+
+
+\begin{frame}
+    lets add a trait so we can share this across pipeline
+    \includegraphics[width = 10cm]{partial_image_filler.jpg}
+\end{frame}
+
+
 
 \begin{frame}
     This in term made very brittle and hard to reason about, any change and addition
@@ -61,7 +103,7 @@
     Even with the macros, composing features was difficult
      it is *also* because of the how quickly changes were made in the pipeline, and also basically
      the issue being of data drilling, as in data that is created on end of a program is required on 
-     the other end of program, also testing was also impossible.
+     the other end of program, also testing was impossible.
 \end{frame}
 
 \begin{frame}
