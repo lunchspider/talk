@@ -10,7 +10,6 @@
 
 % Presentation metadata
 \title{The fault in our traits}
-\subtitle{\& the borrow checker}
 \author{Aman Sharma}
 \institute{Aftershoot Inc.}
 \date{\today}
@@ -25,9 +24,9 @@
 
 \begin{frame}
     Culling is selecting of ?good? images.
-    The definition of good/bad is judged by multiple factors, but for the sake of this 
-    presentation we take every image, then run ML models on them get scores, and run 
-    algorithm on them to get selection/rejections.
+    The definition of good/bad is judged by multiple factors, there is usually 
+    a first pass for each image for model inference, then duplicate detection and then selection.
+    Usually, we have multiple kind of pipeline that runs different models depending on the type of image
 \end{frame}
 
 
